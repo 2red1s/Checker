@@ -39,6 +39,16 @@
             btnProgFiles = new Button();
             btnLocal = new Button();
             btnRoaming = new Button();
+            button1 = new Button();
+            btnCrDp = new Button();
+            btnPrfiles = new Button();
+            btnDwn = new Button();
+            button2 = new Button();
+            button3 = new Button();
+            btnDoc = new Button();
+            btnPrDt = new Button();
+            button4 = new Button();
+            btnAllFl = new Button();
             SuspendLayout();
             // 
             // btnopenFolderCS
@@ -228,12 +238,182 @@
             btnRoaming.UseVisualStyleBackColor = false;
             btnRoaming.Click += btnRoaming_Click;
             // 
+            // button1
+            // 
+            button1.AutoSize = true;
+            button1.BackColor = Color.FromArgb(252, 100, 99);
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Nirmala UI", 11.25F, FontStyle.Bold);
+            button1.ForeColor = Color.White;
+            button1.Location = new Point(107, 467);
+            button1.Name = "button1";
+            button1.Size = new Size(142, 43);
+            button1.TabIndex = 6;
+            button1.Text = "User";
+            button1.TextImageRelation = TextImageRelation.TextBeforeImage;
+            button1.UseVisualStyleBackColor = false;
+            // 
+            // btnCrDp
+            // 
+            btnCrDp.AutoSize = true;
+            btnCrDp.BackColor = Color.FromArgb(252, 100, 99);
+            btnCrDp.FlatAppearance.BorderSize = 0;
+            btnCrDp.FlatStyle = FlatStyle.Flat;
+            btnCrDp.Font = new Font("Nirmala UI", 11.25F, FontStyle.Bold);
+            btnCrDp.ForeColor = Color.White;
+            btnCrDp.Location = new Point(466, 467);
+            btnCrDp.Name = "btnCrDp";
+            btnCrDp.Size = new Size(142, 43);
+            btnCrDp.TabIndex = 7;
+            btnCrDp.Text = "Crash Dumps";
+            btnCrDp.TextImageRelation = TextImageRelation.TextBeforeImage;
+            btnCrDp.UseVisualStyleBackColor = false;
+            // 
+            // btnPrfiles
+            // 
+            btnPrfiles.AutoSize = true;
+            btnPrfiles.BackColor = Color.FromArgb(252, 100, 99);
+            btnPrfiles.FlatAppearance.BorderSize = 0;
+            btnPrfiles.FlatStyle = FlatStyle.Flat;
+            btnPrfiles.Font = new Font("Nirmala UI", 11.25F, FontStyle.Bold);
+            btnPrfiles.ForeColor = Color.White;
+            btnPrfiles.Location = new Point(288, 467);
+            btnPrfiles.Name = "btnPrfiles";
+            btnPrfiles.Size = new Size(142, 43);
+            btnPrfiles.TabIndex = 8;
+            btnPrfiles.Text = "Program Files";
+            btnPrfiles.TextImageRelation = TextImageRelation.TextBeforeImage;
+            btnPrfiles.UseVisualStyleBackColor = false;
+            // 
+            // btnDwn
+            // 
+            btnDwn.AutoSize = true;
+            btnDwn.BackColor = Color.FromArgb(252, 100, 99);
+            btnDwn.FlatAppearance.BorderSize = 0;
+            btnDwn.FlatStyle = FlatStyle.Flat;
+            btnDwn.Font = new Font("Nirmala UI", 11.25F, FontStyle.Bold);
+            btnDwn.ForeColor = Color.White;
+            btnDwn.Location = new Point(466, 386);
+            btnDwn.Name = "btnDwn";
+            btnDwn.Size = new Size(142, 43);
+            btnDwn.TabIndex = 9;
+            btnDwn.Text = "Downloads";
+            btnDwn.TextImageRelation = TextImageRelation.TextBeforeImage;
+            btnDwn.UseVisualStyleBackColor = false;
+            // 
+            // button2
+            // 
+            button2.AutoSize = true;
+            button2.BackColor = Color.FromArgb(252, 100, 99);
+            button2.FlatAppearance.BorderSize = 0;
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.Font = new Font("Nirmala UI", 11.25F, FontStyle.Bold);
+            button2.ForeColor = Color.White;
+            button2.Location = new Point(288, 303);
+            button2.Name = "button2";
+            button2.Size = new Size(142, 43);
+            button2.TabIndex = 10;
+            button2.Text = "Temp";
+            button2.TextImageRelation = TextImageRelation.TextBeforeImage;
+            button2.UseVisualStyleBackColor = false;
+            // 
+            // button3
+            // 
+            button3.AutoSize = true;
+            button3.BackColor = Color.FromArgb(252, 100, 99);
+            button3.FlatAppearance.BorderSize = 0;
+            button3.FlatStyle = FlatStyle.Flat;
+            button3.Font = new Font("Nirmala UI", 11.25F, FontStyle.Bold);
+            button3.ForeColor = Color.White;
+            button3.Location = new Point(107, 386);
+            button3.Name = "button3";
+            button3.Size = new Size(142, 43);
+            button3.TabIndex = 11;
+            button3.Text = "Local";
+            button3.TextImageRelation = TextImageRelation.TextBeforeImage;
+            button3.UseVisualStyleBackColor = false;
+            // 
+            // btnDoc
+            // 
+            btnDoc.AutoSize = true;
+            btnDoc.BackColor = Color.FromArgb(252, 100, 99);
+            btnDoc.FlatAppearance.BorderSize = 0;
+            btnDoc.FlatStyle = FlatStyle.Flat;
+            btnDoc.Font = new Font("Nirmala UI", 11.25F, FontStyle.Bold);
+            btnDoc.ForeColor = Color.White;
+            btnDoc.Location = new Point(466, 303);
+            btnDoc.Name = "btnDoc";
+            btnDoc.Size = new Size(142, 43);
+            btnDoc.TabIndex = 12;
+            btnDoc.Text = "Documents";
+            btnDoc.TextImageRelation = TextImageRelation.TextBeforeImage;
+            btnDoc.UseVisualStyleBackColor = false;
+            // 
+            // btnPrDt
+            // 
+            btnPrDt.AutoSize = true;
+            btnPrDt.BackColor = Color.FromArgb(252, 100, 99);
+            btnPrDt.FlatAppearance.BorderSize = 0;
+            btnPrDt.FlatStyle = FlatStyle.Flat;
+            btnPrDt.Font = new Font("Nirmala UI", 11.25F, FontStyle.Bold);
+            btnPrDt.ForeColor = Color.White;
+            btnPrDt.Location = new Point(288, 386);
+            btnPrDt.Name = "btnPrDt";
+            btnPrDt.Size = new Size(142, 43);
+            btnPrDt.TabIndex = 13;
+            btnPrDt.Text = "ProgramData";
+            btnPrDt.TextImageRelation = TextImageRelation.TextBeforeImage;
+            btnPrDt.UseVisualStyleBackColor = false;
+            // 
+            // button4
+            // 
+            button4.AutoSize = true;
+            button4.BackColor = Color.FromArgb(252, 100, 99);
+            button4.FlatAppearance.BorderSize = 0;
+            button4.FlatStyle = FlatStyle.Flat;
+            button4.Font = new Font("Nirmala UI", 11.25F, FontStyle.Bold);
+            button4.ForeColor = Color.White;
+            button4.Location = new Point(107, 303);
+            button4.Name = "button4";
+            button4.Size = new Size(142, 43);
+            button4.TabIndex = 14;
+            button4.Text = "Roaming";
+            button4.TextImageRelation = TextImageRelation.TextBeforeImage;
+            button4.UseVisualStyleBackColor = false;
+            // 
+            // btnAllFl
+            // 
+            btnAllFl.AutoSize = true;
+            btnAllFl.BackColor = Color.FromArgb(252, 100, 99);
+            btnAllFl.FlatAppearance.BorderSize = 0;
+            btnAllFl.FlatStyle = FlatStyle.Flat;
+            btnAllFl.Font = new Font("Nirmala UI", 11.25F, FontStyle.Bold);
+            btnAllFl.ForeColor = Color.White;
+            btnAllFl.Location = new Point(234, 555);
+            btnAllFl.Name = "btnAllFl";
+            btnAllFl.Size = new Size(242, 43);
+            btnAllFl.TabIndex = 15;
+            btnAllFl.Text = "Open All Folder";
+            btnAllFl.TextImageRelation = TextImageRelation.TextBeforeImage;
+            btnAllFl.UseVisualStyleBackColor = false;
+            // 
             // FormPrograms
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(46, 51, 73);
-            ClientSize = new Size(732, 371);
+            ClientSize = new Size(732, 638);
+            Controls.Add(button1);
+            Controls.Add(btnCrDp);
+            Controls.Add(btnPrfiles);
+            Controls.Add(btnDwn);
+            Controls.Add(button2);
+            Controls.Add(button3);
+            Controls.Add(btnDoc);
+            Controls.Add(btnPrDt);
+            Controls.Add(button4);
+            Controls.Add(btnAllFl);
             Controls.Add(btnopenFolderCS);
             Controls.Add(btnopenFolder);
             Controls.Add(btnUser);
@@ -265,5 +445,15 @@
         private Button btnRoaming;
         private Button btnopenFolder;
         private Button btnopenFolderCS;
+        private Button button1;
+        private Button btnCrDp;
+        private Button btnPrfiles;
+        private Button btnDwn;
+        private Button button2;
+        private Button button3;
+        private Button btnDoc;
+        private Button btnPrDt;
+        private Button button4;
+        private Button btnAllFl;
     }
 }

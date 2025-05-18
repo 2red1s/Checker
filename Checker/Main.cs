@@ -1,44 +1,67 @@
+using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using Checker.Forms;
-using Checker.UserControl;
+using Checker.UserControls;
+
 
 namespace Checker
 {
     public partial class Main : Form
     {
 
-        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
-        private static extern IntPtr CreateRoundRectRgn
-        (
-        int nLeftRect,
-        int nTopRect,
-        int nRightRect,
-        int nBottomRect,
-        int nWidthellipse,
-        int nHeightellipse
+        // Для перемещения формы
+        [DllImport("user32.dll")]
+        public static extern bool ReleaseCapture();
+
+        [DllImport("user32.dll")]
+        public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
+
+        public const int WM_NCLBUTTONDOWN = 0xA1;
+        public const int HTCAPTION = 0x2;
+
+        // Для создания скругленного региона
+        [DllImport("gdi32.dll")]
+        private static extern IntPtr CreateRoundRectRgn(
+            int nLeftRect,
+            int nTopRect,
+            int nRightRect,
+            int nBottomRect,
+            int nWidthEllipse,
+            int nHeightEllipse
         );
 
         public Main()
         {
             InitializeComponent();
-            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 25, 25));
+            Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 25, 25));
             pnlNav.Height = btnFindFiles.Height;
             pnlNav.Top = btnFindFiles.Top;
             pnlNav.Left = btnFindFiles.Left;
             btnFindFiles.BackColor = Color.FromArgb(46, 51, 73);
 
+           
+            this.MouseDown += Main_MouseDown;
+
+            
 
         }
-
-        private void addUserControl(System.Windows.Forms.UserControl userControl)
+        private void Main_MouseDown(object sender, MouseEventArgs e)
         {
-            pnlContainer.Controls.Clear();
-            pnlContainer.Controls.Add(userControl);
+            if (e.Button == MouseButtons.Left)
+            {
+                ReleaseCapture();
+                SendMessage(this.Handle, WM_NCLBUTTONDOWN, HTCAPTION, 0);
+            }
+        }
+        
 
-            pnlContainer2.Controls.Clear();
-            pnlContainer2.Controls.Add(userControl);
+
+        private void addUserControl(Panel panel, UserControl userControl)
+        {
+            panel.Controls.Clear();
+            panel.Controls.Add(userControl);
         }
 
 
@@ -54,30 +77,29 @@ namespace Checker
             pnlNav.Left = btnFindFiles.Left;
             btnFindFiles.BackColor = Color.FromArgb(46, 51, 73);
         }
+
         private void btnReg_Click(object sender, EventArgs e)
         {
             pnlNav.Height = btnReg.Height;
             pnlNav.Top = btnReg.Top;
             btnReg.BackColor = Color.FromArgb(46, 51, 73);
         }
+
         private void btnProgs_Click(object sender, EventArgs e)
         {
             pnlNav.Height = btnProgs.Height;
             pnlNav.Top = btnProgs.Top;
             btnProgs.BackColor = Color.FromArgb(46, 51, 73);
-
-
         }
+
         private void btnWeb_Click(object sender, EventArgs e)
         {
             pnlNav.Height = btnWeb.Height;
             pnlNav.Top = btnWeb.Top;
             btnWeb.BackColor = Color.FromArgb(46, 51, 73);
 
-            UC_Web uc = new UC_Web();
-            addUserControl(uc);
-             UC_Web2 uc2 = new UC_Web2();
-            addUserControl(uc2);
+            addUserControl(pnlContainer, new UC_Web());
+            addUserControl(pnlContainer2, new UC_Web2());
         }
         private void btnExtra_Click(object sender, EventArgs e)
         {
@@ -85,8 +107,9 @@ namespace Checker
             pnlNav.Top = btnExtra.Top;
             btnExtra.BackColor = Color.FromArgb(46, 51, 73);
 
-            //UC_Extra uc = new UC_Extra();
-            //addUserControl(uc);
+            addUserControl(pnlContainer, new UC_Extra());
+            addUserControl(pnlContainer2, new UC_Extra2());
+
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -142,6 +165,39 @@ namespace Checker
 
         private void pnlContainer2_Click(object sender, EventArgs e)
         {
+        }
+
+        private void pnlContainer_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnhide_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void btncross_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+
+        private void btndiscord_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ProcessStartInfo processInfo = new ProcessStartInfo
+                {
+                    FileName = " https://discord.gg/sstGh2TYWu",
+                    UseShellExecute = true
+                };
+                Process.Start(processInfo);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Не удалось открыть Google Drive: {ex.Message}", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
