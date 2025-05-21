@@ -11,6 +11,36 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Tools\BrowserDownloadsView.exe" />
+    <None Remove="Tools\DevManView.exe" />
+    <None Remove="Tools\ExecutedProgramsList.exe" />
+    <None Remove="Tools\JumpListsView.exe" />
+    <None Remove="Tools\shellbag.exe" />
+    <None Remove="Tools\UserAssistView.exe" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Tools\BrowserDownloadsView.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Tools\DevManView.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Tools\ExecutedProgramsList.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Tools\JumpListsView.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Tools\shellbag.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Tools\UserAssistView.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Bunifu.UI.WinForms" Version="9.0.0" />
   </ItemGroup>
 

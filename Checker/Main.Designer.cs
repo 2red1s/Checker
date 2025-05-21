@@ -44,12 +44,14 @@
             panel2 = new Panel();
             label1 = new Label();
             pictureBox1 = new PictureBox();
-            pictureBox2 = new PictureBox();
             pnlContainer = new Panel();
             pnlContainer2 = new Panel();
             btncross = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             btnhide = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             btndiscord = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
+            panel3 = new Panel();
+            lblStatus = new Label();
+            pictureBox2 = new PictureBox();
             panel1.SuspendLayout();
             pnlNav.SuspendLayout();
             panel2.SuspendLayout();
@@ -236,23 +238,14 @@
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 
-            // pictureBox2
-            // 
-            pictureBox2.Location = new Point(0, 58);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(1084, 500);
-            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox2.TabIndex = 5;
-            pictureBox2.TabStop = false;
-            pictureBox2.Click += pictureBox2_Click;
-            // 
             // pnlContainer
             // 
-            pnlContainer.BackColor = Color.DimGray;
+            pnlContainer.BackColor = Color.White;
             pnlContainer.Location = new Point(258, 130);
             pnlContainer.Name = "pnlContainer";
             pnlContainer.Size = new Size(570, 400);
             pnlContainer.TabIndex = 8;
+            pnlContainer.Paint += pnlContainer_Paint_1;
             // 
             // pnlContainer2
             // 
@@ -310,7 +303,7 @@
             btncross.IdleIconLeftImage = (Image)resources.GetObject("btncross.IdleIconLeftImage");
             btncross.IdleIconRightImage = null;
             btncross.IndicateFocus = false;
-            btncross.Location = new Point(1023, 12);
+            btncross.Location = new Point(1023, 8);
             btncross.Name = "btncross";
             btncross.OnDisabledState.BorderColor = Color.FromArgb(191, 191, 191);
             btncross.OnDisabledState.BorderRadius = 1;
@@ -401,7 +394,7 @@
             btnhide.IdleIconLeftImage = (Image)resources.GetObject("btnhide.IdleIconLeftImage");
             btnhide.IdleIconRightImage = null;
             btnhide.IndicateFocus = false;
-            btnhide.Location = new Point(958, 12);
+            btnhide.Location = new Point(955, 8);
             btnhide.Name = "btnhide";
             btnhide.OnDisabledState.BorderColor = Color.FromArgb(191, 191, 191);
             btnhide.OnDisabledState.BorderRadius = 1;
@@ -492,7 +485,7 @@
             btndiscord.IdleIconLeftImage = (Image)resources.GetObject("btndiscord.IdleIconLeftImage");
             btndiscord.IdleIconRightImage = null;
             btndiscord.IndicateFocus = false;
-            btndiscord.Location = new Point(678, 12);
+            btndiscord.Location = new Point(667, 8);
             btndiscord.Name = "btndiscord";
             btndiscord.OnDisabledState.BorderColor = Color.FromArgb(191, 191, 191);
             btndiscord.OnDisabledState.BorderRadius = 1;
@@ -535,19 +528,54 @@
             btndiscord.UseDefaultRadiusAndThickness = true;
             btndiscord.Click += btndiscord_Click;
             // 
+            // panel3
+            // 
+            panel3.BackColor = Color.Red;
+            panel3.BackgroundImage = (Image)resources.GetObject("panel3.BackgroundImage");
+            panel3.BackgroundImageLayout = ImageLayout.Stretch;
+            panel3.Location = new Point(240, 54);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(843, 504);
+            panel3.TabIndex = 11;
+            // 
+            // lblStatus
+            // 
+            lblStatus.AutoSize = true;
+            lblStatus.Font = new Font("Nirmala UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblStatus.ForeColor = Color.White;
+            lblStatus.ImageAlign = ContentAlignment.MiddleLeft;
+            lblStatus.Location = new Point(297, 18);
+            lblStatus.Name = "lblStatus";
+            lblStatus.Size = new Size(275, 21);
+            lblStatus.TabIndex = 12;
+            lblStatus.Text = "Автоматический поиск файлов";
+            lblStatus.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Location = new Point(281, 21);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(16, 16);
+            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox2.TabIndex = 13;
+            pictureBox2.TabStop = false;
+            // 
             // Main
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(46, 51, 73);
             ClientSize = new Size(1084, 561);
+            Controls.Add(pnlContainer2);
+            Controls.Add(pnlContainer);
+            Controls.Add(pictureBox2);
+            Controls.Add(lblStatus);
             Controls.Add(btndiscord);
             Controls.Add(btnhide);
             Controls.Add(btncross);
-            Controls.Add(pnlContainer2);
-            Controls.Add(pnlContainer);
             Controls.Add(panel1);
-            Controls.Add(pictureBox2);
+            Controls.Add(panel3);
             FormBorderStyle = FormBorderStyle.None;
             Name = "Main";
             StartPosition = FormStartPosition.CenterScreen;
@@ -561,6 +589,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -579,12 +608,14 @@
         private Panel pnlNav;
         private CheckedListBox checkedListBox1;
         private Panel dasd;
-        private PictureBox pictureBox2;
        
         private Panel pnlContainer;
         private Panel pnlContainer2;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btncross;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnhide;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton2 btndiscord;
+        private Panel panel3;
+        private Label lblStatus;
+        private PictureBox pictureBox2;
     }
 }
