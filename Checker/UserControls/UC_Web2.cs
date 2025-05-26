@@ -9,15 +9,17 @@ using Microsoft.Win32;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Diagnostics;
+using System.Drawing.Imaging;
 using System.IO;
 
 namespace Checker.UserControls
 {
     public partial class UC_Web2 : UserControl
     {
+
+        private GlowEffect_Line glow;
         List<string> browserPaths = new List<string>();
         List<string> browsers = new List<string>
-
         {
         @"C:\Program Files\Google\Chrome\Application\chrome.exe",
         @"C:\Program Files\Mozilla Firefox\firefox.exe",
@@ -34,18 +36,42 @@ namespace Checker.UserControls
         {
             SetupDataGrid();
             SetDefaultBrowserLabel();
-            LoadDefaultBrowser();
+            //LoadDefaultBrowser();
         }
 
 
         private void SetupDataGrid()
         {
             gridBrowsers.Columns.Clear();
-
             gridBrowsers.Rows.Clear();
+
             gridBrowsers.Size = new Size(200, 120);
 
-            gridBrowsers.Columns.Add("Browser", "Браузер");
+            gridBrowsers.AllowUserToAddRows = false;                             // запрет на добавление новых строк.
+            gridBrowsers.RowHeadersVisible = false;                              // скрывает заголовки строк.
+            gridBrowsers.AllowUserToResizeRows = false;                         // запрещает изменять высоту строк.
+            gridBrowsers.ReadOnly = true;                                       // только чтение 
+
+            // gridBrowsers.BorderStyle = BorderStyle.None;                        // Убирает внешнюю границу таблицы.
+            gridBrowsers.CellBorderStyle = DataGridViewCellBorderStyle.None;    // Убирает границы между ячейками таблицы.
+            gridBrowsers.GridColor = Color.Black;                               // Устанавливает цвет линий сетки 
+
+            gridBrowsers.Columns.Add("Browser", "Браузер");                     // Добавляет столбец 
+            gridBrowsers.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill; // авто размер 
+
+            // Цвета таблицы
+            gridBrowsers.BackgroundColor = Color.FromArgb(105, 105, 105);          // цвет фона таблицы .
+            gridBrowsers.DefaultCellStyle.BackColor = Color.FromArgb(105, 105, 105); //  цвет фона ячеек таблицы (чуть светлее серый).
+            gridBrowsers.DefaultCellStyle.SelectionBackColor = Color.FromArgb(63, 92, 252);     //  цвет фона выделенных ячеек (синий).
+            gridBrowsers.DefaultCellStyle.SelectionForeColor = Color.White;             // цвет текста выделенных ячеек (белый).
+            gridBrowsers.DefaultCellStyle.ForeColor = Color.White;                          // цвет текста не выделенной ячейки
+
+            // Цвета заголовков
+            gridBrowsers.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(252, 100, 99); // цвет фона заголовков столбцов (красный).
+            gridBrowsers.ColumnHeadersDefaultCellStyle.ForeColor = Color.White; // цвет текста заголовков столбцов (белый).
+            gridBrowsers.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;         // Выравнивает текст заголовков столбцов по левому краю с центром по вертикали.
+            gridBrowsers.EnableHeadersVisualStyles = false;                      // Отключает стандартные стили Windows для заголовков столбцов
+
 
         }
 
@@ -80,30 +106,34 @@ namespace Checker.UserControls
             }
         }
 
-        private void SetDefaultBrowserIcon(string browserName)
+        private void SetDefaultBrowserIcon(string browserKey)
         {
-            browserName = browserName.ToLower();
-            string baseDir = @"Checker\Checker\Checker\Icons";
+            browserKey = browserKey.ToLower();
 
-            string iconPath = browserName switch
+            byte[] imageBytes = browserKey switch
             {
-                "chrome" => Path.Combine(baseDir, "chrome.png"),
-                "firefox" => Path.Combine(baseDir, "firefox.png"),
-                "opera" => Path.Combine(baseDir, "opera.png"),
-                "msedge" => Path.Combine(baseDir, "edge.png"),
-                "brave" => Path.Combine(baseDir, "brave.png"),
+                "chrome" => Properties.Resources.chrome,
+                "firefox" => Properties.Resources.firefox,
+                "opera" => Properties.Resources.opera,
+                "edge" => Properties.Resources.edge,
+                "brave" => Properties.Resources.brave,
                 _ => null
             };
 
-            if (iconPath != null && File.Exists(iconPath))
+            try
             {
-                picdefBrowser.Image = Image.FromFile(iconPath);
+                using (MemoryStream ms = new MemoryStream(imageBytes))
+                {
+                    picdefBrowser.Image = Image.FromStream(ms);
+                }
             }
-            else
+            catch (Exception)
             {
+
                 picdefBrowser.Image = null;
             }
         }
+
 
         private void btnBrowsers_Click(object sender, EventArgs e)
         {
@@ -176,8 +206,6 @@ namespace Checker.UserControls
 
         private void SetDefaultBrowserLabel()
         {
-            string defaultBrowser = "";
-
             try
             {
                 using (RegistryKey userChoiceKey = Registry.CurrentUser.OpenSubKey(
@@ -190,31 +218,79 @@ namespace Checker.UserControls
                         {
                             string progIdStr = progId.ToString().ToLower();
 
+                            string browserName = "Неизвестно";
+                            string iconName = "";
+
                             if (progIdStr.Contains("chrome"))
-                                defaultBrowser = "Google Chrome";
+                            {
+                                browserName = "Google Chrome";
+                                iconName = "chrome";
+                            }
                             else if (progIdStr.Contains("firefox"))
-                                defaultBrowser = "Mozilla Firefox";
+                            {
+                                browserName = "Mozilla Firefox";
+                                iconName = "firefox";
+                            }
                             else if (progIdStr.Contains("edge"))
-                                defaultBrowser = "Microsoft Edge";
+                            {
+                                browserName = "Microsoft Edge";
+                                iconName = "edge";
+                            }
                             else if (progIdStr.Contains("brave"))
-                                defaultBrowser = "Brave";
+                            {
+                                browserName = "Brave";
+                                iconName = "brave";
+                            }
                             else if (progIdStr.Contains("opera"))
-                                defaultBrowser = "Opera GX";
+                            {
+                                browserName = "Opera GX";
+                                iconName = "opera";
+                            }
                             else
-                                defaultBrowser = progIdStr; // неизвестный, покажем как есть
+                            {
+                                browserName = progIdStr;
+                            }
+
+                            lbldefBrowser.Text = browserName;
+                            SetDefaultBrowserIcon(iconName);
                         }
                     }
                 }
             }
             catch (Exception ex)
             {
-                defaultBrowser = "Ошибка: " + ex.Message;
+                lbldefBrowser.Text = "Ошибка: " + ex.Message;
             }
-
-            lbldefBrowser.Text = "По умолчанию: " + defaultBrowser;
         }
 
+
         private void lbldefBrowser_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void gridBrowsers_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void pnlLine_Paint(object sender, PaintEventArgs e)
+        {
+            pnlLine.BackColor = Color.Red;
+            this.SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
+            //glow = new GlowEffect_Line(pnlLine);
+            //glow.Start();
+        }
+
+        private void pnlliner_Paint(object sender, PaintEventArgs e)
+        {
+            pnlliner.BackColor = Color.Red;
+            this.SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
+            //glow = new GlowEffect_Line(pnlliner);
+            //glow.Start();
+        }
+
+        private void picdefBrowser_Click(object sender, EventArgs e)
         {
 
         }

@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace Checker.UserControls
 {
-    public partial class UC_FindFiles2 : UserControl
+    public partial class UC_SteamAcc : UserControl
     {
-        public UC_FindFiles2()
+        public UC_SteamAcc()
         {
             InitializeComponent();
-        }
-
-        private void btnPoisk_Click(object sender, EventArgs e)
-        {
-           
         }
     }
 }

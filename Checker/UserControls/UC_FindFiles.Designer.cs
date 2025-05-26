@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             gridFindFiles = new Bunifu.UI.WinForms.BunifuDataGridView();
             name = new DataGridViewTextBoxColumn();
             Typefind = new DataGridViewTextBoxColumn();
@@ -44,21 +44,21 @@
             gridFindFiles.AllowCustomTheming = false;
             gridFindFiles.AllowUserToAddRows = false;
             gridFindFiles.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle4.BackColor = Color.FromArgb(248, 251, 255);
-            dataGridViewCellStyle4.ForeColor = Color.Black;
-            gridFindFiles.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(248, 251, 255);
+            dataGridViewCellStyle1.ForeColor = Color.Black;
+            gridFindFiles.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             gridFindFiles.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             gridFindFiles.BorderStyle = BorderStyle.None;
             gridFindFiles.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
             gridFindFiles.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = Color.DodgerBlue;
-            dataGridViewCellStyle5.Font = new Font("Segoe UI Semibold", 11.75F, FontStyle.Bold);
-            dataGridViewCellStyle5.ForeColor = Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = Color.FromArgb(24, 115, 204);
-            dataGridViewCellStyle5.SelectionForeColor = Color.White;
-            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
-            gridFindFiles.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.DodgerBlue;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI Semibold", 11.75F, FontStyle.Bold);
+            dataGridViewCellStyle2.ForeColor = Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(24, 115, 204);
+            dataGridViewCellStyle2.SelectionForeColor = Color.White;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            gridFindFiles.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             gridFindFiles.ColumnHeadersHeight = 40;
             gridFindFiles.Columns.AddRange(new DataGridViewColumn[] { name, Typefind, columnSize, Date });
             gridFindFiles.CurrentTheme.AlternatingRowsStyle.BackColor = Color.FromArgb(248, 251, 255);
@@ -79,28 +79,29 @@
             gridFindFiles.CurrentTheme.RowsStyle.ForeColor = Color.Black;
             gridFindFiles.CurrentTheme.RowsStyle.SelectionBackColor = Color.FromArgb(210, 232, 255);
             gridFindFiles.CurrentTheme.RowsStyle.SelectionForeColor = Color.Black;
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = Color.White;
-            dataGridViewCellStyle6.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold);
-            dataGridViewCellStyle6.ForeColor = Color.Black;
-            dataGridViewCellStyle6.SelectionBackColor = Color.FromArgb(210, 232, 255);
-            dataGridViewCellStyle6.SelectionForeColor = Color.Black;
-            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
-            gridFindFiles.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.White;
+            dataGridViewCellStyle3.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold);
+            dataGridViewCellStyle3.ForeColor = Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(210, 232, 255);
+            dataGridViewCellStyle3.SelectionForeColor = Color.Black;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            gridFindFiles.DefaultCellStyle = dataGridViewCellStyle3;
             gridFindFiles.EnableHeadersVisualStyles = false;
             gridFindFiles.GridColor = Color.FromArgb(221, 238, 255);
             gridFindFiles.HeaderBackColor = Color.DodgerBlue;
             gridFindFiles.HeaderBgColor = Color.Empty;
             gridFindFiles.HeaderForeColor = Color.White;
-            gridFindFiles.Location = new Point(5, 5);
+            gridFindFiles.Location = new Point(0, 0);
             gridFindFiles.Name = "gridFindFiles";
             gridFindFiles.ReadOnly = true;
             gridFindFiles.RowHeadersVisible = false;
             gridFindFiles.RowTemplate.Height = 40;
             gridFindFiles.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            gridFindFiles.Size = new Size(800, 280);
+            gridFindFiles.Size = new Size(810, 290);
             gridFindFiles.TabIndex = 0;
             gridFindFiles.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light;
+            gridFindFiles.CellContentClick += gridFindFiles_CellContentClick;
             // 
             // name
             // 
@@ -114,10 +115,10 @@
             Typefind.Name = "Typefind";
             Typefind.ReadOnly = true;
             // 
-            // Size
+            // columnSize
             // 
             columnSize.HeaderText = "Размер";
-            columnSize.Name = "Size";
+            columnSize.Name = "columnSize";
             columnSize.ReadOnly = true;
             // 
             // Date
@@ -133,6 +134,7 @@
             Controls.Add(gridFindFiles);
             Name = "UC_FindFiles";
             Size = new Size(810, 290);
+            Load += UC_FindFiles_Load;
             ((System.ComponentModel.ISupportInitialize)gridFindFiles).EndInit();
             ResumeLayout(false);
         }

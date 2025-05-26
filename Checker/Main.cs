@@ -32,6 +32,10 @@ namespace Checker
             int nHeightEllipse
         );
 
+
+        Color btnColor = Color.FromArgb(40, 40, 40);
+        Color btnColor_Leave = Color.FromArgb(20, 20, 20);
+
         public Main()
         {
             InitializeComponent();
@@ -39,7 +43,7 @@ namespace Checker
             pnlNav.Height = btnFindFiles.Height;
             pnlNav.Top = btnFindFiles.Top;
             pnlNav.Left = btnFindFiles.Left;
-            btnFindFiles.BackColor = Color.FromArgb(46, 51, 73);
+            btnFindFiles.BackColor = btnColor;
 
 
             this.MouseDown += Main_MouseDown;
@@ -67,21 +71,20 @@ namespace Checker
 
         private void Main_Load(object sender, EventArgs e)
         {
-            pnlContainer.BackColor = Color.FromArgb(50, 0, 0, 0);
-
+            pnlContainer.BackColor = Color.FromArgb(100,0,0,0);
+            pnlContainer2.BackColor = Color.FromArgb(100, 0,0,0);
+            //bunifuPanel1.BackColor = Color.FromArgb(50, 0, 0,0);
         }
 
 
-// || =============================================== Вкладка Поиск Файлов ============================================ ||
+        // || =============================================== Вкладка Поиск Файлов ============================================ ||
         private void btnFindFiles_Click(object sender, EventArgs e)
         {
             pnlNav.Height = btnFindFiles.Height;
             pnlNav.Top = btnFindFiles.Top;
             pnlNav.Left = btnFindFiles.Left;
-            btnFindFiles.BackColor = Color.FromArgb(46, 51, 73);
+            btnFindFiles.BackColor = btnColor;
 
-            //pnlContainer.Visible = true;
-            //pnlContainer2.Visible = true;
 
             pnlContainer.Size = new Size(810, 290);
             pnlContainer.Location = new Point(258, 130);
@@ -91,30 +94,36 @@ namespace Checker
 
             lblStatus.Text = "Автоматический поиск файлов";
 
+            //pnlContainer.Visible = true;
+            //pnlContainer2.Visible = false;
+
+
+
+
             addUserControl(pnlContainer, new UC_FindFiles());
             addUserControl(pnlContainer2, new UC_FindFiles2());
 
-            
+
         }
 
 
-// || =============================================== Вкладка Реестр ПК ============================================ ||
+        // || =============================================== Вкладка Реестр ПК ============================================ ||
         private void btnReg_Click(object sender, EventArgs e)
         {
             pnlNav.Height = btnReg.Height;
             pnlNav.Top = btnReg.Top;
-            btnReg.BackColor = Color.FromArgb(46, 51, 73);
+            btnReg.BackColor = btnColor;
 
             lblStatus.Text = "Проверка реестра ПК";
         }
 
 
-// || =============================================== Вкладка Программы ============================================ ||
+        // || =============================================== Вкладка Программы ============================================ ||
         private void btnProgs_Click(object sender, EventArgs e)
         {
             pnlNav.Height = btnProgs.Height;
             pnlNav.Top = btnProgs.Top;
-            btnProgs.BackColor = Color.FromArgb(46, 51, 73);
+            btnProgs.BackColor = btnColor;
 
             //pnlContainer.Visible = true;
             //pnlContainer2.Visible = true;
@@ -135,12 +144,12 @@ namespace Checker
         }
 
 
-// || =============================================== Вкладка Веб проверка ============================================ ||
+        // || =============================================== Вкладка Веб проверка ============================================ ||
         private void btnWeb_Click(object sender, EventArgs e)
         {
             pnlNav.Height = btnWeb.Height;
             pnlNav.Top = btnWeb.Top;
-            btnWeb.BackColor = Color.FromArgb(46, 51, 73);
+            btnWeb.BackColor = btnColor;
 
             //pnlContainer.Visible = true;
             //pnlContainer2.Visible = true;
@@ -161,12 +170,12 @@ namespace Checker
         }
 
 
-// || =============================================== Вкладка Дополнительно ============================================ ||
+        // || =============================================== Вкладка Дополнительно ============================================ ||
         private void btnExtra_Click(object sender, EventArgs e)
         {
             pnlNav.Height = btnExtra.Height;
             pnlNav.Top = btnExtra.Top;
-            btnExtra.BackColor = Color.FromArgb(46, 51, 73);
+            btnExtra.BackColor = btnColor;
 
             //pnlContainer.Visible = true;
             //pnlContainer2.Visible = true;
@@ -183,6 +192,16 @@ namespace Checker
             addUserControl(pnlContainer2, new UC_Extra2());
 
         }
+        // || =============================================== Вкладка Дополнительно ============================================ ||
+        private void btnSteamAcc_Click(object sender, EventArgs e)
+
+        {
+            pnlNav.Height = btnExtra.Height;
+            pnlNav.Top = btnExtra.Top;
+            btnSteamAcc.BackColor = btnColor;
+        }
+
+
 
         private void label2_Click(object sender, EventArgs e)
         {
@@ -191,27 +210,27 @@ namespace Checker
 
         private void btnFindFiles_Leave(object sender, EventArgs e)
         {
-            btnFindFiles.BackColor = Color.FromArgb(24, 30, 54);
+            btnFindFiles.BackColor = btnColor_Leave;
         }
 
         private void btnProgs_Leave(object sender, EventArgs e)
         {
-            btnProgs.BackColor = Color.FromArgb(24, 30, 54);
+            btnProgs.BackColor = btnColor_Leave;
         }
 
         private void btnReg_Leave(object sender, EventArgs e)
         {
-            btnReg.BackColor = Color.FromArgb(24, 30, 54);
+            btnReg.BackColor = btnColor_Leave;
         }
 
         private void btnWeb_Leave(object sender, EventArgs e)
         {
-            btnWeb.BackColor = Color.FromArgb(24, 30, 54);
+            btnWeb.BackColor = btnColor_Leave;
         }
 
         private void btnExtra_Leave(object sender, EventArgs e)
         {
-            btnExtra.BackColor = Color.FromArgb(24, 30, 54);
+            btnExtra.BackColor = btnColor_Leave;
         }
 
         private void btnProgs_Enter(object sender, EventArgs e)
@@ -281,5 +300,28 @@ namespace Checker
         {
 
         }
+
+        private void btnSteamAcc_Leave(object sender, EventArgs e)
+        {
+            btnSteamAcc.BackColor = btnColor_Leave;
+        }
+
+        private void btnExtra_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pnlLine_Paint(object sender, PaintEventArgs e)
+        {
+            pnlLine.BackColor = Color.Red;
+            this.SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
+        }
+
+        private void pnlline_3_Paint(object sender, PaintEventArgs e)
+        {
+            pnlline_3.BackColor = Color.Red;
+            this.SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
+        }
     }
+
 }

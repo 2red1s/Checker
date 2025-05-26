@@ -10,16 +10,23 @@ using System.Windows.Forms;
 
 namespace Checker.UserControls
 {
-    public partial class UC_FindFiles2 : UserControl
+    public partial class UC_overlay : UserControl
     {
-        public UC_FindFiles2()
+        
+        public event EventHandler OnStartSearchClicked;
+        public UC_overlay()
         {
             InitializeComponent();
         }
 
+        private void UC_overlay_Load(object sender, EventArgs e)
+        {
+
+        }
+
         private void btnPoisk_Click(object sender, EventArgs e)
         {
-           
+           OnStartSearchClicked?.Invoke(this, EventArgs.Empty);
         }
     }
 }

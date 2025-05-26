@@ -31,9 +31,11 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_Web2));
             btnBrowsers = new Button();
             lblBrowser = new Bunifu.UI.WinForms.BunifuLabel();
-            lbldefBrowser = new Bunifu.UI.WinForms.BunifuLabel();
             gridBrowsers = new DataGridView();
             picdefBrowser = new PictureBox();
+            pnlLine = new Panel();
+            pnlliner = new Panel();
+            lbldefBrowser = new Label();
             ((System.ComponentModel.ISupportInitialize)gridBrowsers).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picdefBrowser).BeginInit();
             SuspendLayout();
@@ -60,37 +62,22 @@
             lblBrowser.AllowParentOverrides = false;
             lblBrowser.AutoEllipsis = false;
             lblBrowser.CursorType = Cursors.Default;
-            lblBrowser.Font = new Font("Segoe UI", 9F);
-            lblBrowser.Location = new Point(16, 299);
+            lblBrowser.Font = new Font("Nirmala UI", 12F, FontStyle.Bold);
+            lblBrowser.ForeColor = Color.White;
+            lblBrowser.Location = new Point(16, 276);
             lblBrowser.Name = "lblBrowser";
             lblBrowser.RightToLeft = RightToLeft.No;
-            lblBrowser.Size = new Size(83, 15);
+            lblBrowser.Size = new Size(122, 21);
             lblBrowser.TabIndex = 18;
             lblBrowser.Text = "Default Browser";
             lblBrowser.TextAlignment = ContentAlignment.TopLeft;
             lblBrowser.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
-            // lbldefBrowser
-            // 
-            lbldefBrowser.AllowParentOverrides = false;
-            lbldefBrowser.AutoEllipsis = false;
-            lbldefBrowser.CursorType = Cursors.Default;
-            lbldefBrowser.Font = new Font("Segoe UI", 9F);
-            lbldefBrowser.Location = new Point(54, 340);
-            lbldefBrowser.Name = "lbldefBrowser";
-            lbldefBrowser.RightToLeft = RightToLeft.No;
-            lbldefBrowser.Size = new Size(83, 15);
-            lbldefBrowser.TabIndex = 18;
-            lbldefBrowser.Text = "Default Browser";
-            lbldefBrowser.TextAlignment = ContentAlignment.TopLeft;
-            lbldefBrowser.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            lbldefBrowser.Click += lbldefBrowser_Click;
-            // 
             // gridBrowsers
             // 
             gridBrowsers.AllowUserToResizeColumns = false;
             gridBrowsers.AllowUserToResizeRows = false;
-            gridBrowsers.BackgroundColor = Color.IndianRed;
+            gridBrowsers.BackgroundColor = Color.DimGray;
             gridBrowsers.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             gridBrowsers.Location = new Point(5, 109);
             gridBrowsers.Name = "gridBrowsers";
@@ -98,6 +85,7 @@
             gridBrowsers.ScrollBars = ScrollBars.Vertical;
             gridBrowsers.Size = new Size(200, 120);
             gridBrowsers.TabIndex = 20;
+            gridBrowsers.CellContentClick += gridBrowsers_CellContentClick_1;
             // 
             // picdefBrowser
             // 
@@ -107,14 +95,44 @@
             picdefBrowser.SizeMode = PictureBoxSizeMode.Zoom;
             picdefBrowser.TabIndex = 21;
             picdefBrowser.TabStop = false;
+            picdefBrowser.Click += picdefBrowser_Click;
+            // 
+            // pnlLine
+            // 
+            pnlLine.Location = new Point(5, 312);
+            pnlLine.Name = "pnlLine";
+            pnlLine.Size = new Size(200, 4);
+            pnlLine.TabIndex = 22;
+            pnlLine.Paint += pnlLine_Paint;
+            // 
+            // pnlliner
+            // 
+            pnlliner.Location = new Point(5, 379);
+            pnlliner.Name = "pnlliner";
+            pnlliner.Size = new Size(200, 4);
+            pnlliner.TabIndex = 23;
+            pnlliner.Paint += pnlliner_Paint;
+            // 
+            // lbldefBrowser
+            // 
+            lbldefBrowser.AutoSize = true;
+            lbldefBrowser.Font = new Font("Nirmala UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lbldefBrowser.ForeColor = Color.White;
+            lbldefBrowser.Location = new Point(54, 337);
+            lbldefBrowser.Name = "lbldefBrowser";
+            lbldefBrowser.Size = new Size(72, 20);
+            lbldefBrowser.TabIndex = 24;
+            lbldefBrowser.Text = "def brow";
             // 
             // UC_Web2
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(lbldefBrowser);
+            Controls.Add(pnlliner);
+            Controls.Add(pnlLine);
             Controls.Add(picdefBrowser);
             Controls.Add(gridBrowsers);
-            Controls.Add(lbldefBrowser);
             Controls.Add(lblBrowser);
             Controls.Add(btnBrowsers);
             Name = "UC_Web2";
@@ -131,8 +149,10 @@
         private Button btnBrowsers;
         private Button button1;
         private Bunifu.UI.WinForms.BunifuLabel lblBrowser;
-        private Bunifu.UI.WinForms.BunifuLabel lbldefBrowser;
         private DataGridView gridBrowsers;
         private PictureBox picdefBrowser;
+        private Panel pnlLine;
+        private Panel pnlliner;
+        private Label lbldefBrowser;
     }
 }

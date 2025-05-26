@@ -33,23 +33,25 @@
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges3 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
             panel1 = new Panel();
+            pnlline_3 = new Panel();
             pnlNav = new Panel();
             checkedListBox1 = new CheckedListBox();
             label3 = new Label();
+            btnSteamAcc = new Button();
             btnExtra = new Button();
             btnWeb = new Button();
             btnReg = new Button();
             btnProgs = new Button();
             btnFindFiles = new Button();
             panel2 = new Panel();
-            label1 = new Label();
+            pnlLine = new Panel();
             pictureBox1 = new PictureBox();
             pnlContainer = new Panel();
             pnlContainer2 = new Panel();
             btncross = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             btnhide = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             btndiscord = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
-            panel3 = new Panel();
+            pnlline_2 = new Panel();
             lblStatus = new Label();
             pictureBox2 = new PictureBox();
             panel1.SuspendLayout();
@@ -61,9 +63,11 @@
             // 
             // panel1
             // 
-            panel1.BackColor = Color.Black;
+            panel1.BackColor = Color.FromArgb(20, 20, 20);
+            panel1.Controls.Add(pnlline_3);
             panel1.Controls.Add(pnlNav);
             panel1.Controls.Add(label3);
+            panel1.Controls.Add(btnSteamAcc);
             panel1.Controls.Add(btnExtra);
             panel1.Controls.Add(btnWeb);
             panel1.Controls.Add(btnReg);
@@ -76,9 +80,17 @@
             panel1.Size = new Size(241, 561);
             panel1.TabIndex = 0;
             // 
+            // pnlline_3
+            // 
+            pnlline_3.Location = new Point(5, 507);
+            pnlline_3.Name = "pnlline_3";
+            pnlline_3.Size = new Size(230, 2);
+            pnlline_3.TabIndex = 23;
+            pnlline_3.Paint += pnlline_3_Paint;
+            // 
             // pnlNav
             // 
-            pnlNav.BackColor = Color.FromArgb(0, 126, 249);
+            pnlNav.BackColor = Color.FromArgb(252, 100, 99);
             pnlNav.Controls.Add(checkedListBox1);
             pnlNav.Location = new Point(0, 254);
             pnlNav.Name = "pnlNav";
@@ -97,25 +109,45 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Nirmala UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.ForeColor = Color.FromArgb(0, 129, 240);
-            label3.Location = new Point(12, 526);
+            label3.ForeColor = Color.White;
+            label3.Location = new Point(12, 537);
             label3.Name = "label3";
             label3.Size = new Size(31, 15);
             label3.TabIndex = 1;
             label3.Text = "v1.0 ";
             label3.Click += label2_Click;
             // 
+            // btnSteamAcc
+            // 
+            btnSteamAcc.AutoSize = true;
+            btnSteamAcc.BackColor = Color.FromArgb(20, 20, 20);
+            btnSteamAcc.Dock = DockStyle.Top;
+            btnSteamAcc.FlatAppearance.BorderSize = 0;
+            btnSteamAcc.FlatStyle = FlatStyle.Flat;
+            btnSteamAcc.Font = new Font("Nirmala UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnSteamAcc.ForeColor = Color.FromArgb(252, 100, 99);
+            btnSteamAcc.Image = Properties.Resources.steam;
+            btnSteamAcc.Location = new Point(0, 401);
+            btnSteamAcc.Name = "btnSteamAcc";
+            btnSteamAcc.Size = new Size(241, 50);
+            btnSteamAcc.TabIndex = 1;
+            btnSteamAcc.Text = "Steam Аккаунты";
+            btnSteamAcc.TextImageRelation = TextImageRelation.TextBeforeImage;
+            btnSteamAcc.UseVisualStyleBackColor = false;
+            btnSteamAcc.Click += btnSteamAcc_Click;
+            btnSteamAcc.Leave += btnSteamAcc_Leave;
+            // 
             // btnExtra
             // 
             btnExtra.AutoSize = true;
-            btnExtra.BackColor = Color.Gray;
+            btnExtra.BackColor = Color.FromArgb(20, 20, 20);
             btnExtra.Dock = DockStyle.Top;
             btnExtra.FlatAppearance.BorderSize = 0;
             btnExtra.FlatStyle = FlatStyle.Flat;
             btnExtra.Font = new Font("Nirmala UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnExtra.ForeColor = Color.FromArgb(252, 100, 99);
-            btnExtra.Image = (Image)resources.GetObject("btnExtra.Image");
-            btnExtra.Location = new Point(0, 368);
+            btnExtra.Image = Properties.Resources.additional1;
+            btnExtra.Location = new Point(0, 351);
             btnExtra.Name = "btnExtra";
             btnExtra.Size = new Size(241, 50);
             btnExtra.TabIndex = 1;
@@ -128,14 +160,14 @@
             // btnWeb
             // 
             btnWeb.AutoSize = true;
-            btnWeb.BackColor = Color.Gray;
+            btnWeb.BackColor = Color.FromArgb(20, 20, 20);
             btnWeb.Dock = DockStyle.Top;
             btnWeb.FlatAppearance.BorderSize = 0;
             btnWeb.FlatStyle = FlatStyle.Flat;
             btnWeb.Font = new Font("Nirmala UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnWeb.ForeColor = Color.FromArgb(252, 100, 99);
-            btnWeb.Image = (Image)resources.GetObject("btnWeb.Image");
-            btnWeb.Location = new Point(0, 318);
+            btnWeb.Image = Properties.Resources.web;
+            btnWeb.Location = new Point(0, 301);
             btnWeb.Name = "btnWeb";
             btnWeb.Size = new Size(241, 50);
             btnWeb.TabIndex = 1;
@@ -148,14 +180,14 @@
             // btnReg
             // 
             btnReg.AutoSize = true;
-            btnReg.BackColor = Color.Gray;
+            btnReg.BackColor = Color.FromArgb(20, 20, 20);
             btnReg.Dock = DockStyle.Top;
             btnReg.FlatAppearance.BorderSize = 0;
             btnReg.FlatStyle = FlatStyle.Flat;
             btnReg.Font = new Font("Nirmala UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnReg.ForeColor = Color.FromArgb(252, 100, 99);
-            btnReg.Image = (Image)resources.GetObject("btnReg.Image");
-            btnReg.Location = new Point(0, 268);
+            btnReg.Image = Properties.Resources.window;
+            btnReg.Location = new Point(0, 251);
             btnReg.Name = "btnReg";
             btnReg.Size = new Size(241, 50);
             btnReg.TabIndex = 1;
@@ -168,14 +200,14 @@
             // btnProgs
             // 
             btnProgs.AutoSize = true;
-            btnProgs.BackColor = Color.Gray;
+            btnProgs.BackColor = Color.FromArgb(20, 20, 20);
             btnProgs.Dock = DockStyle.Top;
             btnProgs.FlatAppearance.BorderSize = 0;
             btnProgs.FlatStyle = FlatStyle.Flat;
             btnProgs.Font = new Font("Nirmala UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnProgs.ForeColor = Color.FromArgb(252, 100, 99);
-            btnProgs.Image = (Image)resources.GetObject("btnProgs.Image");
-            btnProgs.Location = new Point(0, 218);
+            btnProgs.Image = Properties.Resources.program1;
+            btnProgs.Location = new Point(0, 201);
             btnProgs.Name = "btnProgs";
             btnProgs.Size = new Size(241, 50);
             btnProgs.TabIndex = 1;
@@ -189,14 +221,14 @@
             // btnFindFiles
             // 
             btnFindFiles.AutoSize = true;
-            btnFindFiles.BackColor = Color.Gray;
+            btnFindFiles.BackColor = Color.FromArgb(20, 20, 20);
             btnFindFiles.Dock = DockStyle.Top;
             btnFindFiles.FlatAppearance.BorderSize = 0;
             btnFindFiles.FlatStyle = FlatStyle.Flat;
             btnFindFiles.Font = new Font("Nirmala UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnFindFiles.ForeColor = Color.FromArgb(252, 100, 99);
-            btnFindFiles.Image = (Image)resources.GetObject("btnFindFiles.Image");
-            btnFindFiles.Location = new Point(0, 168);
+            btnFindFiles.Image = Properties.Resources.find_white;
+            btnFindFiles.Location = new Point(0, 151);
             btnFindFiles.Name = "btnFindFiles";
             btnFindFiles.Size = new Size(241, 50);
             btnFindFiles.TabIndex = 1;
@@ -208,25 +240,22 @@
             // 
             // panel2
             // 
-            panel2.Controls.Add(label1);
+            panel2.BackColor = Color.FromArgb(20, 20, 20);
+            panel2.Controls.Add(pnlLine);
             panel2.Controls.Add(pictureBox1);
             panel2.Dock = DockStyle.Top;
             panel2.Location = new Point(0, 0);
             panel2.Name = "panel2";
-            panel2.Size = new Size(241, 168);
+            panel2.Size = new Size(241, 151);
             panel2.TabIndex = 0;
             // 
-            // label1
+            // pnlLine
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Nirmala UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.FromArgb(252, 100, 99);
-            label1.Location = new Point(28, 130);
-            label1.Name = "label1";
-            label1.Size = new Size(184, 25);
-            label1.TabIndex = 1;
-            label1.Text = "CRIMSON PROJECT";
-            label1.Click += label1_Click;
+            pnlLine.Location = new Point(5, 137);
+            pnlLine.Name = "pnlLine";
+            pnlLine.Size = new Size(230, 2);
+            pnlLine.TabIndex = 23;
+            pnlLine.Paint += pnlLine_Paint;
             // 
             // pictureBox1
             // 
@@ -241,6 +270,7 @@
             // pnlContainer
             // 
             pnlContainer.BackColor = Color.White;
+            pnlContainer.ForeColor = Color.White;
             pnlContainer.Location = new Point(258, 130);
             pnlContainer.Name = "pnlContainer";
             pnlContainer.Size = new Size(570, 400);
@@ -249,7 +279,8 @@
             // 
             // pnlContainer2
             // 
-            pnlContainer2.BackColor = Color.DimGray;
+            pnlContainer2.BackColor = Color.White;
+            pnlContainer2.ForeColor = Color.White;
             pnlContainer2.Location = new Point(853, 130);
             pnlContainer2.Name = "pnlContainer2";
             pnlContainer2.Size = new Size(210, 400);
@@ -528,15 +559,15 @@
             btndiscord.UseDefaultRadiusAndThickness = true;
             btndiscord.Click += btndiscord_Click;
             // 
-            // panel3
+            // pnlline_2
             // 
-            panel3.BackColor = Color.Red;
-            panel3.BackgroundImage = (Image)resources.GetObject("panel3.BackgroundImage");
-            panel3.BackgroundImageLayout = ImageLayout.Stretch;
-            panel3.Location = new Point(240, 54);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(843, 504);
-            panel3.TabIndex = 11;
+            pnlline_2.BackColor = Color.Red;
+            pnlline_2.BackgroundImage = (Image)resources.GetObject("pnlline_2.BackgroundImage");
+            pnlline_2.BackgroundImageLayout = ImageLayout.Stretch;
+            pnlline_2.Location = new Point(240, 54);
+            pnlline_2.Name = "pnlline_2";
+            pnlline_2.Size = new Size(843, 507);
+            pnlline_2.TabIndex = 11;
             // 
             // lblStatus
             // 
@@ -565,17 +596,17 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(46, 51, 73);
+            BackColor = Color.FromArgb(20, 20, 20);
             ClientSize = new Size(1084, 561);
-            Controls.Add(pnlContainer2);
             Controls.Add(pnlContainer);
+            Controls.Add(pnlContainer2);
             Controls.Add(pictureBox2);
             Controls.Add(lblStatus);
             Controls.Add(btndiscord);
             Controls.Add(btnhide);
             Controls.Add(btncross);
             Controls.Add(panel1);
-            Controls.Add(panel3);
+            Controls.Add(pnlline_2);
             FormBorderStyle = FormBorderStyle.None;
             Name = "Main";
             StartPosition = FormStartPosition.CenterScreen;
@@ -585,7 +616,6 @@
             panel1.PerformLayout();
             pnlNav.ResumeLayout(false);
             panel2.ResumeLayout(false);
-            panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
@@ -598,8 +628,6 @@
         private Panel panel2;
         private PictureBox pictureBox1;
         private Button btnFindFiles;
-     
-        private Label label1;
         private Button btnReg;
         private Button btnProgs;
         private Button btnExtra;
@@ -614,8 +642,11 @@
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btncross;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnhide;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton2 btndiscord;
-        private Panel panel3;
+        private Panel pnlline_2;
         private Label lblStatus;
         private PictureBox pictureBox2;
+        private Button btnSteamAcc;
+        private Panel pnlLine;
+        private Panel pnlline_3;
     }
 }

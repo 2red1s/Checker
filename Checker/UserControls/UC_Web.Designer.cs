@@ -31,14 +31,12 @@
             btnGdisk = new Button();
             btnYdisk = new Button();
             btnOpIn = new Button();
-            btnFurios = new Button();
+            btnVRedux = new Button();
             btnXone = new Button();
             btnOnetap = new Button();
             btnInterium = new Button();
-            btnFreeqn = new Button();
             btnNixware = new Button();
-            btnAurora = new Button();
-            btnSpirthack = new Button();
+            btnSpurdo = new Button();
             btnNeverlose = new Button();
             btnOpAllcheats = new Button();
             btnPhoenixhack = new Button();
@@ -94,23 +92,24 @@
             btnOpIn.Text = "Oplata.info";
             btnOpIn.TextImageRelation = TextImageRelation.TextBeforeImage;
             btnOpIn.UseVisualStyleBackColor = false;
+            btnOpIn.Click += btnOpIn_Click;
             // 
-            // btnFurios
+            // btnVRedux
             // 
-            btnFurios.AutoSize = true;
-            btnFurios.BackColor = Color.FromArgb(252, 100, 99);
-            btnFurios.FlatAppearance.BorderSize = 0;
-            btnFurios.FlatStyle = FlatStyle.Flat;
-            btnFurios.Font = new Font("Nirmala UI", 11.25F, FontStyle.Bold);
-            btnFurios.ForeColor = Color.White;
-            btnFurios.Location = new Point(24, 159);
-            btnFurios.Name = "btnFurios";
-            btnFurios.Size = new Size(142, 43);
-            btnFurios.TabIndex = 17;
-            btnFurios.Text = "FURIOS";
-            btnFurios.TextImageRelation = TextImageRelation.TextBeforeImage;
-            btnFurios.UseVisualStyleBackColor = false;
-            btnFurios.Click += btnFurios_Click;
+            btnVRedux.AutoSize = true;
+            btnVRedux.BackColor = Color.FromArgb(252, 100, 99);
+            btnVRedux.FlatAppearance.BorderSize = 0;
+            btnVRedux.FlatStyle = FlatStyle.Flat;
+            btnVRedux.Font = new Font("Nirmala UI", 11.25F, FontStyle.Bold);
+            btnVRedux.ForeColor = Color.White;
+            btnVRedux.Location = new Point(404, 246);
+            btnVRedux.Name = "btnVRedux";
+            btnVRedux.Size = new Size(142, 43);
+            btnVRedux.TabIndex = 17;
+            btnVRedux.Text = "VREDUX";
+            btnVRedux.TextImageRelation = TextImageRelation.TextBeforeImage;
+            btnVRedux.UseVisualStyleBackColor = false;
+            btnVRedux.Click += btnVRedux_Click;
             // 
             // btnXone
             // 
@@ -120,7 +119,7 @@
             btnXone.FlatStyle = FlatStyle.Flat;
             btnXone.Font = new Font("Nirmala UI", 11.25F, FontStyle.Bold);
             btnXone.ForeColor = Color.White;
-            btnXone.Location = new Point(24, 220);
+            btnXone.Location = new Point(24, 127);
             btnXone.Name = "btnXone";
             btnXone.Size = new Size(142, 43);
             btnXone.TabIndex = 17;
@@ -137,7 +136,7 @@
             btnOnetap.FlatStyle = FlatStyle.Flat;
             btnOnetap.Font = new Font("Nirmala UI", 11.25F, FontStyle.Bold);
             btnOnetap.ForeColor = Color.White;
-            btnOnetap.Location = new Point(24, 278);
+            btnOnetap.Location = new Point(214, 127);
             btnOnetap.Name = "btnOnetap";
             btnOnetap.Size = new Size(142, 43);
             btnOnetap.TabIndex = 17;
@@ -154,7 +153,7 @@
             btnInterium.FlatStyle = FlatStyle.Flat;
             btnInterium.Font = new Font("Nirmala UI", 11.25F, FontStyle.Bold);
             btnInterium.ForeColor = Color.White;
-            btnInterium.Location = new Point(214, 159);
+            btnInterium.Location = new Point(24, 188);
             btnInterium.Name = "btnInterium";
             btnInterium.Size = new Size(142, 43);
             btnInterium.TabIndex = 17;
@@ -162,22 +161,6 @@
             btnInterium.TextImageRelation = TextImageRelation.TextBeforeImage;
             btnInterium.UseVisualStyleBackColor = false;
             btnInterium.Click += btnInterium_Click;
-            // 
-            // btnFreeqn
-            // 
-            btnFreeqn.AutoSize = true;
-            btnFreeqn.BackColor = Color.FromArgb(252, 100, 99);
-            btnFreeqn.FlatAppearance.BorderSize = 0;
-            btnFreeqn.FlatStyle = FlatStyle.Flat;
-            btnFreeqn.Font = new Font("Nirmala UI", 11.25F, FontStyle.Bold);
-            btnFreeqn.ForeColor = Color.White;
-            btnFreeqn.Location = new Point(214, 220);
-            btnFreeqn.Name = "btnFreeqn";
-            btnFreeqn.Size = new Size(142, 43);
-            btnFreeqn.TabIndex = 17;
-            btnFreeqn.Text = "FreeQN";
-            btnFreeqn.TextImageRelation = TextImageRelation.TextBeforeImage;
-            btnFreeqn.UseVisualStyleBackColor = false;
             // 
             // btnNixware
             // 
@@ -187,7 +170,7 @@
             btnNixware.FlatStyle = FlatStyle.Flat;
             btnNixware.Font = new Font("Nirmala UI", 11.25F, FontStyle.Bold);
             btnNixware.ForeColor = Color.White;
-            btnNixware.Location = new Point(214, 278);
+            btnNixware.Location = new Point(214, 246);
             btnNixware.Name = "btnNixware";
             btnNixware.Size = new Size(142, 43);
             btnNixware.TabIndex = 17;
@@ -196,37 +179,22 @@
             btnNixware.UseVisualStyleBackColor = false;
             btnNixware.Click += btnNixware_Click;
             // 
-            // btnAurora
+            // btnSpurdo
             // 
-            btnAurora.AutoSize = true;
-            btnAurora.BackColor = Color.FromArgb(252, 100, 99);
-            btnAurora.FlatAppearance.BorderSize = 0;
-            btnAurora.FlatStyle = FlatStyle.Flat;
-            btnAurora.Font = new Font("Nirmala UI", 11.25F, FontStyle.Bold);
-            btnAurora.ForeColor = Color.White;
-            btnAurora.Location = new Point(404, 159);
-            btnAurora.Name = "btnAurora";
-            btnAurora.Size = new Size(142, 43);
-            btnAurora.TabIndex = 17;
-            btnAurora.Text = "AURORA";
-            btnAurora.TextImageRelation = TextImageRelation.TextBeforeImage;
-            btnAurora.UseVisualStyleBackColor = false;
-            // 
-            // btnSpirthack
-            // 
-            btnSpirthack.AutoSize = true;
-            btnSpirthack.BackColor = Color.FromArgb(252, 100, 99);
-            btnSpirthack.FlatAppearance.BorderSize = 0;
-            btnSpirthack.FlatStyle = FlatStyle.Flat;
-            btnSpirthack.Font = new Font("Nirmala UI", 11.25F, FontStyle.Bold);
-            btnSpirthack.ForeColor = Color.White;
-            btnSpirthack.Location = new Point(404, 220);
-            btnSpirthack.Name = "btnSpirthack";
-            btnSpirthack.Size = new Size(142, 43);
-            btnSpirthack.TabIndex = 17;
-            btnSpirthack.Text = "SpirtHack";
-            btnSpirthack.TextImageRelation = TextImageRelation.TextBeforeImage;
-            btnSpirthack.UseVisualStyleBackColor = false;
+            btnSpurdo.AutoSize = true;
+            btnSpurdo.BackColor = Color.FromArgb(252, 100, 99);
+            btnSpurdo.FlatAppearance.BorderSize = 0;
+            btnSpurdo.FlatStyle = FlatStyle.Flat;
+            btnSpurdo.Font = new Font("Nirmala UI", 11.25F, FontStyle.Bold);
+            btnSpurdo.ForeColor = Color.White;
+            btnSpurdo.Location = new Point(404, 127);
+            btnSpurdo.Name = "btnSpurdo";
+            btnSpurdo.Size = new Size(142, 43);
+            btnSpurdo.TabIndex = 17;
+            btnSpurdo.Text = "SPURDO";
+            btnSpurdo.TextImageRelation = TextImageRelation.TextBeforeImage;
+            btnSpurdo.UseVisualStyleBackColor = false;
+            btnSpurdo.Click += btnSpurdo_Click;
             // 
             // btnNeverlose
             // 
@@ -236,7 +204,7 @@
             btnNeverlose.FlatStyle = FlatStyle.Flat;
             btnNeverlose.Font = new Font("Nirmala UI", 11.25F, FontStyle.Bold);
             btnNeverlose.ForeColor = Color.White;
-            btnNeverlose.Location = new Point(404, 278);
+            btnNeverlose.Location = new Point(214, 188);
             btnNeverlose.Name = "btnNeverlose";
             btnNeverlose.Size = new Size(142, 43);
             btnNeverlose.TabIndex = 17;
@@ -253,9 +221,9 @@
             btnOpAllcheats.FlatStyle = FlatStyle.Flat;
             btnOpAllcheats.Font = new Font("Nirmala UI", 11.25F, FontStyle.Bold);
             btnOpAllcheats.ForeColor = Color.White;
-            btnOpAllcheats.Location = new Point(404, 336);
+            btnOpAllcheats.Location = new Point(185, 339);
             btnOpAllcheats.Name = "btnOpAllcheats";
-            btnOpAllcheats.Size = new Size(142, 43);
+            btnOpAllcheats.Size = new Size(200, 43);
             btnOpAllcheats.TabIndex = 17;
             btnOpAllcheats.Text = "Open All";
             btnOpAllcheats.TextImageRelation = TextImageRelation.TextBeforeImage;
@@ -270,7 +238,7 @@
             btnPhoenixhack.FlatStyle = FlatStyle.Flat;
             btnPhoenixhack.Font = new Font("Nirmala UI", 11.25F, FontStyle.Bold);
             btnPhoenixhack.ForeColor = Color.White;
-            btnPhoenixhack.Location = new Point(214, 336);
+            btnPhoenixhack.Location = new Point(404, 188);
             btnPhoenixhack.Name = "btnPhoenixhack";
             btnPhoenixhack.Size = new Size(142, 43);
             btnPhoenixhack.TabIndex = 17;
@@ -287,7 +255,7 @@
             btnMidnight.FlatStyle = FlatStyle.Flat;
             btnMidnight.Font = new Font("Nirmala UI", 11.25F, FontStyle.Bold);
             btnMidnight.ForeColor = Color.White;
-            btnMidnight.Location = new Point(24, 336);
+            btnMidnight.Location = new Point(24, 246);
             btnMidnight.Name = "btnMidnight";
             btnMidnight.Size = new Size(142, 43);
             btnMidnight.TabIndex = 17;
@@ -306,14 +274,12 @@
             Controls.Add(btnPhoenixhack);
             Controls.Add(btnOpAllcheats);
             Controls.Add(btnNeverlose);
-            Controls.Add(btnSpirthack);
             Controls.Add(btnNixware);
-            Controls.Add(btnFreeqn);
-            Controls.Add(btnAurora);
+            Controls.Add(btnSpurdo);
             Controls.Add(btnOnetap);
             Controls.Add(btnInterium);
             Controls.Add(btnXone);
-            Controls.Add(btnFurios);
+            Controls.Add(btnVRedux);
             Controls.Add(btnGdisk);
             Name = "UC_Web";
             Size = new Size(570, 400);
@@ -327,14 +293,12 @@
         private Button btnGdisk;
         private Button btnYdisk;
         private Button btnOpIn;
-        private Button btnFurios;
+        private Button btnVRedux;
         private Button btnXone;
         private Button btnOnetap;
         private Button btnInterium;
-        private Button btnFreeqn;
         private Button btnNixware;
-        private Button btnAurora;
-        private Button btnSpirthack;
+        private Button btnSpurdo;
         private Button btnNeverlose;
         private Button btnOpAllcheats;
         private Button btnPhoenixhack;
