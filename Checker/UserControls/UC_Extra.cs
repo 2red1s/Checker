@@ -72,5 +72,10 @@ namespace Checker.UserControls
             System.Diagnostics.Process.Start("explorer.exe", Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "CrashDumps"));
             System.Diagnostics.Process.Start("explorer.exe", Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + @"\Downloads");
         }
+
+        private void UC_Extra_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

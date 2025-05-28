@@ -40,7 +40,7 @@
             lblInfo.AutoSize = true;
             lblInfo.Font = new Font("Segoe UI", 9F);
             lblInfo.ForeColor = Color.White;
-            lblInfo.Location = new Point(3, 0);
+            lblInfo.Location = new Point(3, 3);
             lblInfo.Name = "lblInfo";
             lblInfo.Size = new Size(642, 15);
             lblInfo.TabIndex = 0;
@@ -101,9 +101,10 @@
             Controls.Add(label4);
             Controls.Add(label1);
             Controls.Add(lblInfo);
-            ForeColor = Color.Transparent;
+            ForeColor = Color.White;
             Name = "UC_Progs2";
-            Size = new Size(730, 120);
+            Size = new Size(810, 120);
+            Load += UC_Progs2_Load;
             ResumeLayout(false);
             PerformLayout();
         }

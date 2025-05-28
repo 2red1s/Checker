@@ -101,5 +101,10 @@ namespace Checker.UserControls
                 MessageBox.Show("BrowserDownloadsView сломан!", "Ошибка");
             }
         }
+
+        private void UC_Progs_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

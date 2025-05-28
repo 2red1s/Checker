@@ -42,6 +42,8 @@
 
   <ItemGroup>
     <PackageReference Include="Bunifu.UI.WinForms" Version="9.0.0" />
+    <PackageReference Include="Gameloop.Vdf" Version="0.6.2" />
+    <PackageReference Include="HtmlAgilityPack" Version="1.12.1" />
   </ItemGroup>
 
   <ItemGroup>

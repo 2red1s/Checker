@@ -17,7 +17,7 @@ namespace Checker.UserControls
     public partial class UC_Web2 : UserControl
     {
 
-        private GlowEffect_Line glow;
+        
         List<string> browserPaths = new List<string>();
         List<string> browsers = new List<string>
         {
@@ -42,6 +42,7 @@ namespace Checker.UserControls
 
         private void SetupDataGrid()
         {
+
             gridBrowsers.Columns.Clear();
             gridBrowsers.Rows.Clear();
 

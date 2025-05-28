@@ -31,13 +31,13 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_Web2));
             btnBrowsers = new Button();
             lblBrowser = new Bunifu.UI.WinForms.BunifuLabel();
-            gridBrowsers = new DataGridView();
             picdefBrowser = new PictureBox();
             pnlLine = new Panel();
             pnlliner = new Panel();
             lbldefBrowser = new Label();
-            ((System.ComponentModel.ISupportInitialize)gridBrowsers).BeginInit();
+            gridBrowsers = new DataGridView();
             ((System.ComponentModel.ISupportInitialize)picdefBrowser).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)gridBrowsers).BeginInit();
             SuspendLayout();
             // 
             // btnBrowsers
@@ -73,22 +73,9 @@
             lblBrowser.TextAlignment = ContentAlignment.TopLeft;
             lblBrowser.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
-            // gridBrowsers
-            // 
-            gridBrowsers.AllowUserToResizeColumns = false;
-            gridBrowsers.AllowUserToResizeRows = false;
-            gridBrowsers.BackgroundColor = Color.DimGray;
-            gridBrowsers.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            gridBrowsers.Location = new Point(5, 109);
-            gridBrowsers.Name = "gridBrowsers";
-            gridBrowsers.RowHeadersVisible = false;
-            gridBrowsers.ScrollBars = ScrollBars.Vertical;
-            gridBrowsers.Size = new Size(200, 120);
-            gridBrowsers.TabIndex = 20;
-            gridBrowsers.CellContentClick += gridBrowsers_CellContentClick_1;
-            // 
             // picdefBrowser
             // 
+            picdefBrowser.BackColor = Color.Transparent;
             picdefBrowser.Location = new Point(16, 331);
             picdefBrowser.Name = "picdefBrowser";
             picdefBrowser.Size = new Size(32, 32);
@@ -101,7 +88,7 @@
             // 
             pnlLine.Location = new Point(5, 312);
             pnlLine.Name = "pnlLine";
-            pnlLine.Size = new Size(200, 4);
+            pnlLine.Size = new Size(200, 2);
             pnlLine.TabIndex = 22;
             pnlLine.Paint += pnlLine_Paint;
             // 
@@ -109,13 +96,14 @@
             // 
             pnlliner.Location = new Point(5, 379);
             pnlliner.Name = "pnlliner";
-            pnlliner.Size = new Size(200, 4);
+            pnlliner.Size = new Size(200, 2);
             pnlliner.TabIndex = 23;
             pnlliner.Paint += pnlliner_Paint;
             // 
             // lbldefBrowser
             // 
             lbldefBrowser.AutoSize = true;
+            lbldefBrowser.BackColor = Color.Transparent;
             lbldefBrowser.Font = new Font("Nirmala UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lbldefBrowser.ForeColor = Color.White;
             lbldefBrowser.Location = new Point(54, 337);
@@ -124,22 +112,30 @@
             lbldefBrowser.TabIndex = 24;
             lbldefBrowser.Text = "def brow";
             // 
+            // gridBrowsers
+            // 
+            gridBrowsers.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            gridBrowsers.Location = new Point(5, 111);
+            gridBrowsers.Name = "gridBrowsers";
+            gridBrowsers.Size = new Size(200, 120);
+            gridBrowsers.TabIndex = 26;
+            // 
             // UC_Web2
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(gridBrowsers);
             Controls.Add(lbldefBrowser);
             Controls.Add(pnlliner);
             Controls.Add(pnlLine);
             Controls.Add(picdefBrowser);
-            Controls.Add(gridBrowsers);
             Controls.Add(lblBrowser);
             Controls.Add(btnBrowsers);
             Name = "UC_Web2";
             Size = new Size(210, 400);
             Load += UC_Web2_Load;
-            ((System.ComponentModel.ISupportInitialize)gridBrowsers).EndInit();
             ((System.ComponentModel.ISupportInitialize)picdefBrowser).EndInit();
+            ((System.ComponentModel.ISupportInitialize)gridBrowsers).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -149,10 +145,10 @@
         private Button btnBrowsers;
         private Button button1;
         private Bunifu.UI.WinForms.BunifuLabel lblBrowser;
-        private DataGridView gridBrowsers;
         private PictureBox picdefBrowser;
         private Panel pnlLine;
         private Panel pnlliner;
         private Label lbldefBrowser;
+        private DataGridView gridBrowsers;
     }
 }

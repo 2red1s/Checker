@@ -47,7 +47,7 @@
             btnLastActiv.ForeColor = Color.White;
             btnLastActiv.Image = (Image)resources.GetObject("btnLastActiv.Image");
             btnLastActiv.ImageAlign = ContentAlignment.MiddleLeft;
-            btnLastActiv.Location = new Point(62, 22);
+            btnLastActiv.Location = new Point(52, 22);
             btnLastActiv.Name = "btnLastActiv";
             btnLastActiv.Size = new Size(273, 43);
             btnLastActiv.TabIndex = 18;
@@ -66,7 +66,7 @@
             btnLastDoc.ForeColor = Color.White;
             btnLastDoc.Image = (Image)resources.GetObject("btnLastDoc.Image");
             btnLastDoc.ImageAlign = ContentAlignment.MiddleLeft;
-            btnLastDoc.Location = new Point(62, 93);
+            btnLastDoc.Location = new Point(50, 93);
             btnLastDoc.Name = "btnLastDoc";
             btnLastDoc.Size = new Size(274, 43);
             btnLastDoc.TabIndex = 18;
@@ -85,7 +85,7 @@
             btnUAView.ForeColor = Color.White;
             btnUAView.Image = (Image)resources.GetObject("btnUAView.Image");
             btnUAView.ImageAlign = ContentAlignment.MiddleLeft;
-            btnUAView.Location = new Point(61, 164);
+            btnUAView.Location = new Point(50, 164);
             btnUAView.Name = "btnUAView";
             btnUAView.Size = new Size(275, 43);
             btnUAView.TabIndex = 18;
@@ -104,7 +104,7 @@
             btnHistUsb.ForeColor = Color.White;
             btnHistUsb.Image = (Image)resources.GetObject("btnHistUsb.Image");
             btnHistUsb.ImageAlign = ContentAlignment.MiddleLeft;
-            btnHistUsb.Location = new Point(411, 22);
+            btnHistUsb.Location = new Point(504, 22);
             btnHistUsb.Name = "btnHistUsb";
             btnHistUsb.Size = new Size(253, 43);
             btnHistUsb.TabIndex = 18;
@@ -123,7 +123,7 @@
             btnFoldActiv.ForeColor = Color.White;
             btnFoldActiv.Image = (Image)resources.GetObject("btnFoldActiv.Image");
             btnFoldActiv.ImageAlign = ContentAlignment.MiddleLeft;
-            btnFoldActiv.Location = new Point(411, 93);
+            btnFoldActiv.Location = new Point(504, 93);
             btnFoldActiv.Name = "btnFoldActiv";
             btnFoldActiv.Size = new Size(253, 43);
             btnFoldActiv.TabIndex = 18;
@@ -142,7 +142,7 @@
             btnHistDown.ForeColor = Color.White;
             btnHistDown.Image = (Image)resources.GetObject("btnHistDown.Image");
             btnHistDown.ImageAlign = ContentAlignment.MiddleLeft;
-            btnHistDown.Location = new Point(411, 164);
+            btnHistDown.Location = new Point(504, 164);
             btnHistDown.Name = "btnHistDown";
             btnHistDown.Size = new Size(253, 43);
             btnHistDown.TabIndex = 18;
@@ -155,14 +155,17 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.Transparent;
             Controls.Add(btnHistDown);
             Controls.Add(btnFoldActiv);
             Controls.Add(btnHistUsb);
             Controls.Add(btnUAView);
             Controls.Add(btnLastDoc);
             Controls.Add(btnLastActiv);
+            ForeColor = Color.White;
             Name = "UC_Progs";
-            Size = new Size(730, 230);
+            Size = new Size(810, 230);
+            Load += UC_Progs_Load;
             ResumeLayout(false);
             PerformLayout();
         }

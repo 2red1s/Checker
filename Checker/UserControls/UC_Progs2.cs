@@ -21,5 +21,10 @@ namespace Checker.UserControls
         {
 
         }
+
+        private void UC_Progs2_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

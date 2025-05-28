@@ -33,6 +33,7 @@
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges3 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
             panel1 = new Panel();
+            lblRed1soff = new Label();
             pnlline_3 = new Panel();
             pnlNav = new Panel();
             checkedListBox1 = new CheckedListBox();
@@ -46,24 +47,28 @@
             panel2 = new Panel();
             pnlLine = new Panel();
             pictureBox1 = new PictureBox();
-            pnlContainer = new Panel();
-            pnlContainer2 = new Panel();
             btncross = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             btnhide = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             btndiscord = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
             pnlline_2 = new Panel();
+            lblInfo2 = new Label();
+            lblInfo = new Label();
+            bunifuPanel2 = new Bunifu.UI.WinForms.BunifuPanel();
+            bunifuPanel1 = new Bunifu.UI.WinForms.BunifuPanel();
             lblStatus = new Label();
             pictureBox2 = new PictureBox();
             panel1.SuspendLayout();
             pnlNav.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            pnlline_2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(20, 20, 20);
+            panel1.Controls.Add(lblRed1soff);
             panel1.Controls.Add(pnlline_3);
             panel1.Controls.Add(pnlNav);
             panel1.Controls.Add(label3);
@@ -79,6 +84,20 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(241, 561);
             panel1.TabIndex = 0;
+            // 
+            // lblRed1soff
+            // 
+            lblRed1soff.AutoSize = true;
+            lblRed1soff.BackColor = Color.Transparent;
+            lblRed1soff.Cursor = Cursors.Hand;
+            lblRed1soff.Font = new Font("Nirmala UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblRed1soff.ForeColor = Color.FromArgb(141, 177, 240);
+            lblRed1soff.Location = new Point(134, 537);
+            lblRed1soff.Name = "lblRed1soff";
+            lblRed1soff.Size = new Size(86, 15);
+            lblRed1soff.TabIndex = 24;
+            lblRed1soff.Text = "R E D 1 S O F F";
+            lblRed1soff.Click += lblRed1soff_Click;
             // 
             // pnlline_3
             // 
@@ -112,15 +131,16 @@
             label3.ForeColor = Color.White;
             label3.Location = new Point(12, 537);
             label3.Name = "label3";
-            label3.Size = new Size(31, 15);
+            label3.Size = new Size(123, 15);
             label3.TabIndex = 1;
-            label3.Text = "v1.0 ";
+            label3.Text = "v1.0           powered by";
             label3.Click += label2_Click;
             // 
             // btnSteamAcc
             // 
             btnSteamAcc.AutoSize = true;
             btnSteamAcc.BackColor = Color.FromArgb(20, 20, 20);
+            btnSteamAcc.Cursor = Cursors.Hand;
             btnSteamAcc.Dock = DockStyle.Top;
             btnSteamAcc.FlatAppearance.BorderSize = 0;
             btnSteamAcc.FlatStyle = FlatStyle.Flat;
@@ -141,6 +161,7 @@
             // 
             btnExtra.AutoSize = true;
             btnExtra.BackColor = Color.FromArgb(20, 20, 20);
+            btnExtra.Cursor = Cursors.Hand;
             btnExtra.Dock = DockStyle.Top;
             btnExtra.FlatAppearance.BorderSize = 0;
             btnExtra.FlatStyle = FlatStyle.Flat;
@@ -161,6 +182,7 @@
             // 
             btnWeb.AutoSize = true;
             btnWeb.BackColor = Color.FromArgb(20, 20, 20);
+            btnWeb.Cursor = Cursors.Hand;
             btnWeb.Dock = DockStyle.Top;
             btnWeb.FlatAppearance.BorderSize = 0;
             btnWeb.FlatStyle = FlatStyle.Flat;
@@ -181,6 +203,7 @@
             // 
             btnReg.AutoSize = true;
             btnReg.BackColor = Color.FromArgb(20, 20, 20);
+            btnReg.Cursor = Cursors.Hand;
             btnReg.Dock = DockStyle.Top;
             btnReg.FlatAppearance.BorderSize = 0;
             btnReg.FlatStyle = FlatStyle.Flat;
@@ -201,6 +224,7 @@
             // 
             btnProgs.AutoSize = true;
             btnProgs.BackColor = Color.FromArgb(20, 20, 20);
+            btnProgs.Cursor = Cursors.Hand;
             btnProgs.Dock = DockStyle.Top;
             btnProgs.FlatAppearance.BorderSize = 0;
             btnProgs.FlatStyle = FlatStyle.Flat;
@@ -222,6 +246,7 @@
             // 
             btnFindFiles.AutoSize = true;
             btnFindFiles.BackColor = Color.FromArgb(20, 20, 20);
+            btnFindFiles.Cursor = Cursors.Hand;
             btnFindFiles.Dock = DockStyle.Top;
             btnFindFiles.FlatAppearance.BorderSize = 0;
             btnFindFiles.FlatStyle = FlatStyle.Flat;
@@ -267,25 +292,6 @@
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 
-            // pnlContainer
-            // 
-            pnlContainer.BackColor = Color.White;
-            pnlContainer.ForeColor = Color.White;
-            pnlContainer.Location = new Point(258, 130);
-            pnlContainer.Name = "pnlContainer";
-            pnlContainer.Size = new Size(570, 400);
-            pnlContainer.TabIndex = 8;
-            pnlContainer.Paint += pnlContainer_Paint_1;
-            // 
-            // pnlContainer2
-            // 
-            pnlContainer2.BackColor = Color.White;
-            pnlContainer2.ForeColor = Color.White;
-            pnlContainer2.Location = new Point(853, 130);
-            pnlContainer2.Name = "pnlContainer2";
-            pnlContainer2.Size = new Size(210, 400);
-            pnlContainer2.TabIndex = 9;
-            // 
             // btncross
             // 
             btncross.AllowAnimations = true;
@@ -304,6 +310,7 @@
             btncross.ButtonTextMarginLeft = 0;
             btncross.ColorContrastOnClick = 45;
             btncross.ColorContrastOnHover = 45;
+            btncross.Cursor = Cursors.Hand;
             borderEdges1.BottomLeft = true;
             borderEdges1.BottomRight = true;
             borderEdges1.TopLeft = true;
@@ -395,6 +402,7 @@
             btnhide.ButtonTextMarginLeft = 0;
             btnhide.ColorContrastOnClick = 45;
             btnhide.ColorContrastOnHover = 45;
+            btnhide.Cursor = Cursors.Hand;
             borderEdges2.BottomLeft = true;
             borderEdges2.BottomRight = true;
             borderEdges2.TopLeft = true;
@@ -425,7 +433,7 @@
             btnhide.IdleIconLeftImage = (Image)resources.GetObject("btnhide.IdleIconLeftImage");
             btnhide.IdleIconRightImage = null;
             btnhide.IndicateFocus = false;
-            btnhide.Location = new Point(955, 8);
+            btnhide.Location = new Point(958, 8);
             btnhide.Name = "btnhide";
             btnhide.OnDisabledState.BorderColor = Color.FromArgb(191, 191, 191);
             btnhide.OnDisabledState.BorderRadius = 1;
@@ -486,6 +494,7 @@
             btndiscord.ButtonTextMarginLeft = 0;
             btndiscord.ColorContrastOnClick = 45;
             btndiscord.ColorContrastOnHover = 45;
+            btndiscord.Cursor = Cursors.Hand;
             borderEdges3.BottomLeft = true;
             borderEdges3.BottomRight = true;
             borderEdges3.TopLeft = true;
@@ -516,21 +525,21 @@
             btndiscord.IdleIconLeftImage = (Image)resources.GetObject("btndiscord.IdleIconLeftImage");
             btndiscord.IdleIconRightImage = null;
             btndiscord.IndicateFocus = false;
-            btndiscord.Location = new Point(667, 8);
+            btndiscord.Location = new Point(890, 8);
             btndiscord.Name = "btndiscord";
-            btndiscord.OnDisabledState.BorderColor = Color.FromArgb(191, 191, 191);
+            btndiscord.OnDisabledState.BorderColor = Color.Black;
             btndiscord.OnDisabledState.BorderRadius = 1;
             btndiscord.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderStyles.Solid;
             btndiscord.OnDisabledState.BorderThickness = 1;
-            btndiscord.OnDisabledState.FillColor = Color.FromArgb(204, 204, 204);
-            btndiscord.OnDisabledState.ForeColor = Color.FromArgb(168, 160, 168);
+            btndiscord.OnDisabledState.FillColor = Color.Transparent;
+            btndiscord.OnDisabledState.ForeColor = Color.Gray;
             btndiscord.OnDisabledState.IconLeftImage = null;
             btndiscord.OnDisabledState.IconRightImage = null;
-            btndiscord.onHoverState.BorderColor = Color.FromArgb(30, 150, 255);
+            btndiscord.onHoverState.BorderColor = Color.Silver;
             btndiscord.onHoverState.BorderRadius = 1;
             btndiscord.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderStyles.Solid;
             btndiscord.onHoverState.BorderThickness = 1;
-            btndiscord.onHoverState.FillColor = Color.FromArgb(30, 150, 255);
+            btndiscord.onHoverState.FillColor = Color.Silver;
             btndiscord.onHoverState.ForeColor = Color.White;
             btndiscord.onHoverState.IconLeftImage = null;
             btndiscord.onHoverState.IconRightImage = null;
@@ -562,12 +571,68 @@
             // pnlline_2
             // 
             pnlline_2.BackColor = Color.Red;
-            pnlline_2.BackgroundImage = (Image)resources.GetObject("pnlline_2.BackgroundImage");
+            pnlline_2.BackgroundImage = Properties.Resources.upscalemedia_transformed;
             pnlline_2.BackgroundImageLayout = ImageLayout.Stretch;
+            pnlline_2.Controls.Add(lblInfo2);
+            pnlline_2.Controls.Add(lblInfo);
+            pnlline_2.Controls.Add(bunifuPanel2);
+            pnlline_2.Controls.Add(bunifuPanel1);
             pnlline_2.Location = new Point(240, 54);
             pnlline_2.Name = "pnlline_2";
             pnlline_2.Size = new Size(843, 507);
             pnlline_2.TabIndex = 11;
+            // 
+            // lblInfo2
+            // 
+            lblInfo2.AutoSize = true;
+            lblInfo2.BackColor = Color.Transparent;
+            lblInfo2.Font = new Font("Nirmala UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblInfo2.ForeColor = Color.White;
+            lblInfo2.Location = new Point(613, 73);
+            lblInfo2.Name = "lblInfo2";
+            lblInfo2.Size = new Size(38, 20);
+            lblInfo2.TabIndex = 5;
+            lblInfo2.Text = "Info";
+            // 
+            // lblInfo
+            // 
+            lblInfo.AutoSize = true;
+            lblInfo.BackColor = Color.Transparent;
+            lblInfo.Font = new Font("Nirmala UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblInfo.ForeColor = Color.White;
+            lblInfo.Location = new Point(17, 73);
+            lblInfo.Name = "lblInfo";
+            lblInfo.Size = new Size(38, 20);
+            lblInfo.TabIndex = 4;
+            lblInfo.Text = "Info";
+            // 
+            // bunifuPanel2
+            // 
+            bunifuPanel2.BackgroundColor = Color.Transparent;
+            bunifuPanel2.BackgroundImage = (Image)resources.GetObject("bunifuPanel2.BackgroundImage");
+            bunifuPanel2.BackgroundImageLayout = ImageLayout.Stretch;
+            bunifuPanel2.BorderColor = Color.Transparent;
+            bunifuPanel2.BorderRadius = 3;
+            bunifuPanel2.BorderThickness = 1;
+            bunifuPanel2.Location = new Point(613, 97);
+            bunifuPanel2.Name = "bunifuPanel2";
+            bunifuPanel2.ShowBorders = true;
+            bunifuPanel2.Size = new Size(210, 386);
+            bunifuPanel2.TabIndex = 3;
+            // 
+            // bunifuPanel1
+            // 
+            bunifuPanel1.BackgroundColor = Color.Transparent;
+            bunifuPanel1.BackgroundImage = (Image)resources.GetObject("bunifuPanel1.BackgroundImage");
+            bunifuPanel1.BackgroundImageLayout = ImageLayout.Stretch;
+            bunifuPanel1.BorderColor = Color.Transparent;
+            bunifuPanel1.BorderRadius = 20;
+            bunifuPanel1.BorderThickness = 0;
+            bunifuPanel1.Location = new Point(17, 97);
+            bunifuPanel1.Name = "bunifuPanel1";
+            bunifuPanel1.ShowBorders = true;
+            bunifuPanel1.Size = new Size(570, 386);
+            bunifuPanel1.TabIndex = 2;
             // 
             // lblStatus
             // 
@@ -598,8 +663,6 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(20, 20, 20);
             ClientSize = new Size(1084, 561);
-            Controls.Add(pnlContainer);
-            Controls.Add(pnlContainer2);
             Controls.Add(pictureBox2);
             Controls.Add(lblStatus);
             Controls.Add(btndiscord);
@@ -617,6 +680,8 @@
             pnlNav.ResumeLayout(false);
             panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            pnlline_2.ResumeLayout(false);
+            pnlline_2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -636,9 +701,6 @@
         private Panel pnlNav;
         private CheckedListBox checkedListBox1;
         private Panel dasd;
-       
-        private Panel pnlContainer;
-        private Panel pnlContainer2;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btncross;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnhide;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton2 btndiscord;
@@ -648,5 +710,10 @@
         private Button btnSteamAcc;
         private Panel pnlLine;
         private Panel pnlline_3;
+        private Bunifu.UI.WinForms.BunifuPanel bunifuPanel1;
+        private Bunifu.UI.WinForms.BunifuPanel bunifuPanel2;
+        private Label lblRed1soff;
+        private Label lblInfo2;
+        private Label lblInfo;
     }
 }

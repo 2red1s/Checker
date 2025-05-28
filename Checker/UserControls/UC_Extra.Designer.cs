@@ -226,6 +226,7 @@
             Controls.Add(btnAllFl);
             Name = "UC_Extra";
             Size = new Size(570, 400);
+            Load += UC_Extra_Load;
             ResumeLayout(false);
             PerformLayout();
         }
