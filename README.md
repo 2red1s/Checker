@@ -18,7 +18,7 @@
 ## Требования и запуск
 
 ### Системные требования
-* [.NET SDK](https://microsoft.com) (рекомендуется последняя версия LTS).
+* [.NET SDK](https://dotnet.microsoft.com/ru-ru/download) (рекомендуется последняя версия LTS).
 * Visual Studio / Rider или CLI для сборки.
 
 ### Запуск через консоль
